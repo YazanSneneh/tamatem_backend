@@ -11,7 +11,6 @@ class ItemViewSet(ListModelMixin, RetrieveModelMixin, UpdateModelMixin, GenericV
     serializer_class = ItemSerializer
 
     def get_permissions(self):
-        print(self.request.method)
         if self.request.method in ["PATCH", "PUT"]:
             return [IsAuthenticated()]
         return [AllowAny()]
