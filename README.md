@@ -1,11 +1,11 @@
 # tamatem task backend
 
-###Setting up and running the application.
+### Setting up and running the application.
 #### Run the app.
 1. Create python env file and activate.
 2. Install requirements: `pip install -r requirements.txt`
 
-####Database
+#### Database
  1. Prepare models for migration to database.
    `python manage.py makemigrations`
  2. Migrate to database
@@ -28,7 +28,7 @@ To create a Django admin user you can follow these steps:
   * Fill admin user you created in the login box.
   * You will see item and item image models they have **1:1** relation fill the data you desire.
 
-####Endpoints
+#### Endpoints
 * If app is running on port 8000 use blue text to visit links: 
 * [users](http://127.0.0.1:8000/api/v1/auth/users/)
   * `POST {{baseUrl}}/api/v1/auth/users/`
@@ -48,10 +48,13 @@ To create a Django admin user you can follow these steps:
   * Header: `{ "Authorization": "JWT token" }`
   * Request body:` { "name", "price", "description" }`
 
-###Reasoning behind choosing database
+#### Note
+* if you are using a different url for client rather than angular default add the url to key `CORS_ALLOWED_ORIGINS` inside `app/setting.py`
+
+### Reasoning behind choosing database
 * I used SQLlite3 because it's lightweight and suitable for the project requirements
 
-###Provide a brief explanation of your design decisions and any challenges faced.
+### Provide a brief explanation of your design decisions and any challenges faced.
 ### Django as Backend
 * I chose Django based on my expertise and its suitability for the project requirements.
 * Project Structure: I organized the Django backend using a standard Django project layout, with separate directories for apps, static files, media files, and configurations.
